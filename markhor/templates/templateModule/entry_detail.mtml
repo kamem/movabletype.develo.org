@@ -1,0 +1,14 @@
+<main role="main">
+	<article>
+		<header>
+			<h1><$MTEntryTitle$></h1>
+			<$MTInclude module="<__trans phrase="Entry Metadata">"$>
+		</header>
+
+		<div class="content">
+<MTIfNonEmpty tag="EntryBody"><$MTEntryBody$>
+			<hr class="more"></MTIfNonEmpty><MTIfNonEmpty tag="EntryMore">
+			<div id="more">
+<$MTEntryMore$>
+			</div></MTIfNonEmpty>
+		</div>

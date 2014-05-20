@@ -1,0 +1,33 @@
+<MTEntryIfCommentsOpen><MTIfRegistrationAllowed><script type="text/javascript">
+<!--
+<MTIf name="comment_preview_template">is_preview = true;</MTIf>
+//writeCommenterGreeting(commenter_name, <$MTEntryID$>, <$MTEntryBlogID$>, commenter_id, commenter_url);
+//-->
+</script></MTIfRegistrationAllowed>
+			<form method="post" action="<$MTCGIPath$><$MTCommentScript$>" id="commentsForm" onsubmit="return mtCommentOnSubmit(this)">
+				<fieldset>
+				<legend><__trans phrase="Comments Form"></legend>
+				<input type="hidden" name="static" value="1" />
+				<input type="hidden" name="entry_id" value="<$MTEntryID$>" />
+				<input type="hidden" name="__lang" value="<$MTBlogLanguage$>" />
+				<dl class="form">
+					<dt class="name"><label for="comment-author"><__trans phrase="Name"></label></dt>
+					<dd class="name"><input id="comment-author" name="author" size="30" value="<MTIf name="comment_preview_template"><$MTCommentAuthor encode_html="1"$></MTIf>" /></dd>
+					<dt class="mail"><label for="comment-email"><__trans phrase="Mail Address"></label></dt>
+					<dd class="mail"><input id="comment-email" name="email" size="30" value="<MTIf name="comment_preview_template"><$MTCommentEmail encode_html="1"$></MTIf>" /></dd>
+					<dt class="url"><label for="comment-url"><abbr title="Uniform Resource Identifer">URI</abbr></label></dt>
+					<dd class="url"><input id="comment-url" name="url" size="30" value="<MTIf name="comment_preview_template"><$MTCommentURL encode_html="1"$></MTIf>" /></dd>
+					<dt class="info"><label for="comment-bake-cookie"><__trans phrase="Remember personal info?"></label></dt>
+					<dd class="info"><input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" onkeypress="mtRememberMeOnClick(this)" value="1" accesskey="r" /></dd>
+					<dt class="comment"><label for="comment-text"><__trans phrase="Comment"> <MTIfAllowCommentHTML><span>(<__trans phrase="You can use some <abbr title="Hyper Text Markup Language">HTML</abbr> tags for decorating.">)</span></MTIfAllowCommentHTML></label></dt>
+					<dd class="comment"><textarea id="comment-text" name="text" rows="10" cols="50"><MTIf name="comment_preview_template"><$MTCommentBody autolink="0" sanitize="0" convert_breaks="0" encode_html="1"$></MTIf></textarea></dd>
+				</dl><MTIfNonEmpty tag="MTCaptchaFields"><MTIfCommentsAccepted><MTIfRegistrationAllowed><MTElse><$MTCaptchaFields$></MTIfRegistrationAllowed></MTIfCommentsAccepted></MTIfNonEmpty>
+				<p id="comments-open-footer"><MTUnless name="pageID" like="comment_preview"><input type="submit" class="button preview" id="comment-preview" name="preview" value="<__trans phrase="Preview">" /></MTUnless><input type="submit" class="button post" value="<__trans phrase="Post">" /><MTIf name="comment"><input type="button" class="button cancel" name="cancel" id="comment-cancel" value="<__trans phrase="cancel">" onclick="window.location='<$MTEntryPermalink$>'" /></MTIf></p>
+				</fieldset>
+				<script type="text/javascript">
+					<!--
+					//mtAttachEvent("load", mtEntryOnLoad);
+					//mtAttachEvent("unload", mtEntryOnUnload);
+					//-->
+				</script>
+			</form></MTEntryIfCommentsOpen>

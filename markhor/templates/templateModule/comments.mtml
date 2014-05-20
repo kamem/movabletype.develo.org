@@ -1,0 +1,18 @@
+<MTIfCommentsActive>
+		<section id="comments">
+			<h2><__trans phrase="Comment"> : <$MTEntryCommentCount$></h2>
+			<$MTInclude module="<__trans phrase="Comments Form">"$><MTComments><MTCommentsHeader>
+			<dl class="log"></MTCommentsHeader>
+				<dt id="comment<$MTCommentID$>"><$MTCommentAuthorLink default_name="<__trans phrase="Anonymous">" spam_protect="1"$> : <span class="date"><$MTCommentDate format="%Y&#24180;%m&#26376;%d&#26085; (%a) %H:%M"$></span></dt>
+				<dd>
+				<$MTCommentBody$>
+				</dd><MTCommentsFooter>
+			</dl></MTCommentsFooter></MTComments><mt:ignore>
+			<script type= "text/javascript">/*<![CDATA[*/
+			// var hatena_bookmark_anywhere_limit = 100;0
+			//var hatena_bookmark_anywhere_style = false;
+			// var hatena_bookmark_anywhere_collapse;
+			/*]]>*/</script>
+			<script src="/js/hatena-bookmark-anywhere.js" type="text/javascript" charset="utf-8"></script>
+			<div id="hatena_bookmark_anywhere"></div></mt:ignore>
+		</section></MTIfCommentsActive>

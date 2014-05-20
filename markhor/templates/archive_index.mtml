@@ -1,0 +1,28 @@
+<MTSetVar name="pageID" value="list">
+<MTSetVarBlock name="page_title"><__trans phrase="Variouslylist"></MTSetVarBlock>
+<$MTInclude module="<__trans phrase="Header">"$>
+
+<main role="main">
+	<article>
+		<h1><__trans phrase="Variouslylist"></h1>
+
+		<div class="content">
+			<section id="entries">
+				<h2><__trans phrase="EntryList"> : <span class="count"><$MTBlogEntryCount$></span></h2>
+				<dl class="table"><MTEntries lastn="999">
+					<dt class="user<$MTEntryAuthorID$> <MTEntryCategories glue=" "><$MTCategoryBasename$></MTEntryCategories>" id="entry<$MTEntryID$>"><time pubdate="<$MTEntryDate format="%Y-%m-%dT%H:%M:%S" language="en"$>"><$MTEntryDate language="ja" format="%Y&#24180;%m&#26376;%d&#26085;"$></time></dt>
+					<dd class="user<$MTEntryAuthorID$> <MTEntryCategories glue=" "><$MTCategoryBasename$></MTEntryCategories>" id="entry<$MTEntryID$>"><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a> <a href="http://b.hatena.ne.jp/entry/<$MTEntryPermalink$>" class="hatena"><img src="http://b.hatena.ne.jp/entry/image/normal/<$MTEntryPermalink$>" /></a></dd></MTEntries>
+				</dl>
+			</section>
+	
+			<section id="comment">
+				<h2><__trans phrase="Comment"></h2>
+				<dl class="commentList"><MTEntries recently_commented_on="5">
+					<dt class="user<$MTEntryAuthorID$> <MTEntryCategories glue=" "><$MTCategoryBasename$></MTEntryCategories>" id="entry<$MTEntryID$>"><a href="<$MTEntryLink$>"><$MTEntryTitle$></a></dt><MTComments lastn="3" sort_order="descend">
+					<dd><a href="<MTCommentEntry><$MTEntryLink$></MTCommentEntry>#comment<$MTCommentID$>" title="<$MTCommentBody remove_html="1" encode_html="1"$>" rel="nofollow"><MTIfNonZero tag="MTCommentAuthor"><$MTCommentAuthor$><MTElse>No Name</MTElse></MTIfNonZero></a> : <span class="comment"><$MTCommentBody remove_html="1" encode_html="1" convert_breaks="0" words="30"$>...</span></dd></MTComments></MTEntries>
+				</dl>
+			</section>
+		</div>
+	</article>
+
+	<$MTInclude module="<__trans phrase="Footer">"$>

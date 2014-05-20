@@ -1,0 +1,19 @@
+<MTIf name="entry">		<ul class="data">
+				<li class="name"><MTIfNonEmpty tag="MTEntryAuthorUserpicURL"><img src="<$MTEntryAuthorUserpicURL$>" width="25" height="25"> </MTIfNonEmpty><$MTEntryAuthorUsername$></li>
+				<li class="date"><time pubdate="<$MTEntryDate format="%Y-%m-%dT%H:%M:%S" language="en"$>"><$MTEntryDate language="ja" format="%Y&#24180;%m&#26376;%d&#26085; (%a)"$></time></li><MTIfNonEmpty tag="MTEntryCategory">
+				<li class="category"><__trans phrase="Category"> : <MTEntryCategories glue=" | "><a href="<$MTCategoryArchiveLink$>" title="<$MTCategoryCount$>" class="<$MTCategoryBasename$>"><MTCategoryLabel></a></MTEntryCategories></li></MTIfNonEmpty><MTEntryIfTagged>
+				<li class="tag"><__trans phrase="Tag"> : <MTEntryTags glue=" | "><a href="<$MTTagSearchLink$>" title="<$MTTagCount$>"><$MTTagLabel$></a></MTEntryTags></li></MTEntryIfTagged>
+			</ul>
+
+			<ul class="service">
+				<li class="hatena"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
+				<li class="facebook"><div class="fb-like" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true" data-font="segoe ui" id="facebook"></div><div id="fb-root"></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script></li>
+				<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" id="tweet-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+				<li class="google"><div class="g-plusone" data-size="medium" data-width="120" id="gplusone"></div><script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script></li>
+			</ul><MTElse>			<ul class="data">
+					<li class="name"><MTIfNonEmpty tag="MTEntryAuthorUserpicURL"><img src="<$MTEntryAuthorUserpicURL$>" width="25" height="25"></MTIfNonEmpty><$MTEntryAuthorUsername$></li>
+					<li class="date"><time pubdate="<$MTEntryDate format="%Y-%m-%dT%H:%M:%S" language="en"$>"><$MTEntryDate language="ja" format="%Y&#24180;%m&#26376;%d&#26085; (%a)"$></time></li><MTIfNonEmpty tag="MTEntryCategory">
+					<li class="category"><__trans phrase="Category"> : <MTEntryCategories glue=" | "><a href="<$MTCategoryArchiveLink$>" title="<$MTCategoryCount$>" class="<$MTCategoryBasename$>"><$MTCategoryLabel$></a></MTEntryCategories></li></MTIfNonEmpty><MTEntryIfTagged>
+					<li class="tag"><__trans phrase="Tag"> : <MTEntryTags glue=" | "><a href="<$MTTagSearchLink$>" title="<$MTTagCount$>"><$MTTagLabel$></a></MTEntryTags></li></MTEntryIfTagged>
+				</ul></MTIf>

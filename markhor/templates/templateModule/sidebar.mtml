@@ -1,0 +1,107 @@
+	<nav class="nav">
+		<dl id="navi"><MTIf name="sidebar_calendar">
+			<dt class="calendar"><__trans phrase="Calendar"></dt>
+			<dd class="calendar"><MTIf name="archive">
+				<table class="calendar <$MTArchiveDate format="%B" language="en"$>" id="date-<$MTArchiveDate format="%Y-%m"$>" cellpadding="0" cellspacing="0" summary="<__trans phrase="Calendar">">
+					<caption><MTArchivePrevious><a href="<$MTArchiveLink$>" title="<$MTArchiveDate format="%B %Y"$>">&laquo;</a></MTArchivePrevious><$MTArchiveDate format="%B %Y"$><MTArchiveNext><a href="<$MTArchiveLink$>" title="<$MTArchiveDate format="%B %Y"$>">&raquo;</a></MTArchiveNext></caption>
+					<tr>
+						<th class="sunday" title="<__trans phrase="Sunday">"><__trans phrase="S"></th>
+						<th class="monday" title="<__trans phrase="Monday">"><__trans phrase="M"></th>
+						<th class="tuesday" title="<__trans phrase="Tuesday">"><__trans phrase="T"></th>
+						<th class="wednesday" title="<__trans phrase="Wednesday">"><__trans phrase="W"></th>
+						<th class="thursday" title="<__trans phrase="Thursday">"><__trans phrase="T</th>">
+						<th class="friday" title="<__trans phrase="Friday">"><__trans phrase="F"></th>
+						<th class="saturday" title="<__trans phrase="Saturday">"><__trans phrase="S</th>">
+					</tr><MTCalendar month="this"><MTCalendarWeekHeader>
+					<tr></MTCalendarWeekHeader>
+						<td<MTCalendarIfToday> class="today"</MTCalendarIfToday>><MTCalendarIfEntries><MTEntries lastn="1"><a href="<$MTEntryLink archive_type="Daily"$>" class="user<$MTEntryAuthorID$>"><$MTCalendarDay$></a></MTEntries></MTCalendarIfEntries><MTCalendarIfNoEntries><$MTCalendarDay$></MTCalendarIfNoEntries><MTCalendarIfBlank>&nbsp;</MTCalendarIfBlank></td><MTCalendarWeekFooter>
+					</tr></MTCalendarWeekFooter></MTCalendar>
+				</table><MTElse><MTArchiveList archive_type="Monthly" lastn="1">
+				<table class="calendar <$MTArchiveDate format="%B" language="en"$>" id="date-<$MTArchiveDate format="%Y-%m"$>" cellpadding="0" cellspacing="0" summary="Calendar">
+					<caption><MTArchivePrevious><a href="<$MTArchiveLink$>" title="<$MTArchiveDate format="%B %Y"$>">&laquo;</a></MTArchivePrevious><$MTArchiveDate format="%B %Y"$><MTArchiveNext><a href="<$MTArchiveLink$>" title="<$MTArchiveDate format="%B %Y"$>">&raquo;</a></MTArchiveNext></caption>
+					<tr>
+						<th class="sunday" title="<__trans phrase="Sunday">"><__trans phrase="S"></th>
+						<th class="monday" title="<__trans phrase="Monday">"><__trans phrase="M"></th>
+						<th class="tuesday" title="<__trans phrase="Tuesday">"><__trans phrase="T"></th>
+						<th class="wednesday" title="<__trans phrase="Wednesday">"><__trans phrase="W"></th>
+						<th class="thursday" title="<__trans phrase="Thursday">"><__trans phrase="T</th>">
+						<th class="friday" title="<__trans phrase="Friday">"><__trans phrase="F"></th>
+						<th class="saturday" title="<__trans phrase="Saturday">"><__trans phrase="S</th>">
+					</tr><MTCalendar month="this"><MTCalendarWeekHeader>
+					<tr></MTCalendarWeekHeader>
+						<td<MTCalendarIfToday> class="today"</MTCalendarIfToday>><MTCalendarIfEntries><MTEntries lastn="1"><a href="<$MTEntryLink archive_type="Daily"$>" class="user<$MTEntryAuthorID$>"><$MTCalendarDay$></a></MTEntries></MTCalendarIfEntries><MTCalendarIfNoEntries><$MTCalendarDay$></MTCalendarIfNoEntries><MTCalendarIfBlank>&nbsp;</MTCalendarIfBlank></td><MTCalendarWeekFooter>
+					</tr></MTCalendarWeekFooter></MTCalendar>
+				</table></MTArchiveList></MTIF>
+			</dd></MTIF><MTIf name="sidebar_entries"><MTIf name="archive">
+			<dt class="entries"><__trans phrase="Recent Entries"></dt>
+			<dd class="entries">
+				<ul><MTEntries>
+					<li class="user<$MTEntryAuthorID$> <MTEntryCategories glue=" "><$MTCategoryBasename$></MTEntryCategories>"><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></li></MTEntries>
+				</ul>
+			</dd><MTElse>
+			<dt class="entries"><__trans phrase="Recent Entries"></dt>
+			<dd class="entries">
+				<ul><MTEntries lastn="5">
+					<li class="user<$MTEntryAuthorID$> <MTEntryCategories glue=" "><$MTCategoryBasename$></MTEntryCategories>"><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></li></MTEntries>
+				</ul>
+			</dd></MTIF></MTIF><MTIf name="sidebar_categories">
+			<dt class="categories"><__trans phrase="Categories"></dt>
+			<dd class="categories"><MTTopLevelCategories><MTSubCatIsFirst>
+				<ul></MTSubCatIsFirst>
+					<MTIfNonZero tag="MTCategoryCount"><li class="<$MTCategoryBasename$>"><a href="<$MTCategoryArchiveLink$>" title="<$MTCategoryCount$>"><MTCategoryLabel> : <span class="count"><$MTCategoryCount$></span></a><MTElse><li><span class="topLevel"><$MTCategoryLabel$></span></MTElse></MTIfNonZero><MTSubCatsRecurse></li><MTSubCatIsLast>
+				</ul></MTSubCatIsLast></MTTopLevelCategories>
+			</dd></MTIF><MTIf name="sidebar_archives"><MTIf name="archive">
+			<dt class="archives"><__trans phrase="Archives"></dt>
+			<dd class="archives">
+				<ul>
+					<MTArchiveList archive_type="Monthly"><li><a href="<$MTArchiveLink$>" title="<$MTArchiveCount$>" rel="nofollow"><$MTArchiveDate format="%B %Y"$> : <span class="count"><$MTArchiveCount$></span></a></li>
+					</MTArchiveList><li><a href="<$MTBlogURL$>archives.html" title="<$MTBlogEntryCount$>"><__trans phrase="All Entries"> : <span class="count"><$MTBlogEntryCount$></span></a></li>
+				</ul>
+			</dd><MTElse>
+			<dt class="archives"><__trans phrase="Archives"></dt>
+			<dd class="archives">
+				<ul>
+					<MTArchiveList archive_type="Monthly" lastn="3"><li><a href="<$MTArchiveLink$>" title="<$MTArchiveCount$>" rel="nofollow"><$MTArchiveDate format="%B %Y"$> : <span class="count"><$MTArchiveCount$></span></a></li>
+					</MTArchiveList><li><a href="<$MTBlogURL$>archives.html" title="<$MTBlogEntryCount$>"><__trans phrase="All Entries"> : <span class="count"><$MTBlogEntryCount$></span></a></li>
+				</ul>
+			</dd></MTIf></MTIf><MTIf name="sidebar_comments">
+			<dt class="comments"><__trans phrase="Recent Comments"></dt>
+			<dd class="comments">
+				<dl><MTEntries recently_commented_on="3">
+					<dt class="user<$MTEntryAuthorID$>"><a href="<$MTEntryLink$>"><$MTEntryTitle$></a></dt><MTComments lastn="3" sort_order="descend">
+					<dd><a href="<MTCommentEntry><$MTEntryLink$></MTCommentEntry>#comment<$MTCommentID$>" title="<$MTCommentBody remove_html="1" encode_html="1"$>" rel="nofollow"><MTIfNonZero tag="MTCommentAuthor"><$MTCommentAuthor$><MTElse>No Name</MTElse></MTIfNonZero></a></dd></MTComments></MTEntries>
+				</dl>
+			</dd></MTIf><MTIf name="sidebar_tag">
+			<dt class="tags"><__trans phrase="Tag Cloud"></dt>
+			<dd class="tags">
+				<ul><MTTags>
+					<li class="level<$MTTagRank$>"><a href="<$MTTagSearchLink$>" title="<$MTTagCount$>"><$MTTagName$></a></li></MTTags>
+				</ul>
+			</dd></MTIf>
+		</dl>
+		<dl class="others"><MTIf name="sidebar_search">
+			<dt class="search"><__trans phrase="Search"></dt>
+			<dd class="search">
+				<form method="get" action="<$MTCGIPath$><$MTSearchScript$>">
+					<fieldset>
+					<legend><label for="search"><$MTBlogName encode_html="1"$>内の検索</label></legend>
+					<input type="hidden" name="IncludeBlogs" value="<$MTBlogID$>" />
+					<input id="search" name="search" size="16" value="<$MTSearchString encode_html="1"$>" />
+					<input type="submit" class="button search" value="<__trans phrase="Search">" />
+					</fieldset>
+				</form>
+			</dd></MTIf><MTIf name="sidebar_feeds">
+			<dt class="feeds"><__trans phrase="Feed"></dt>
+			<dd class="feeds">
+				<ul>
+					<li class="rss"><a href="<$MTLink template="Atom"$>">ブログを購読する</a></li>
+				</ul>
+			</dd></MTIf><MTIf name="index">
+			<dt class="links">Links</dt>
+			<dd class="links">
+				<ul>
+					<li><a href="cssxhtmllesson/index.html"><img src="img/banner/banner01.gif" alt="2brains" width="225" height="60" /></a></li>
+				</ul>
+			</dd></MTIf>
+		</dl>
+	</nav>

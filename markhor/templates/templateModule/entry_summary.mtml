@@ -1,0 +1,69 @@
+<main role="main">
+	<article>
+		<h1><MTIf name="index"><$MTBlogName encode_html="1"$>の最新情報<MTElse><MTIfArchiveType archive_type="Category"><$MTArchiveTitle$></MTIfArchiveType><MTIfArchiveType archive_type="Monthly"><$MTArchiveTitle$></MTIfArchiveType><MTIfArchiveType archive_type="Daily"><$MTArchiveTitle$></MTIfArchiveType><MTIfStraightSearch><$MTBlogName$>で&ldquo;<$MTSearchString$>&rdquo;が含まれるブログ記事</MTIfStraightSearch><MTIfTagSearch><$MTBlogName$>で&ldquo;<$MTSearchString$>&rdquo;タグの付いているブログ記事</MTIfTagSearch><MTIf name="entry"><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></MTIf></MTIf></h1>
+<MTIf name="index">
+		<nav class="categories"><MTTopLevelCategories><MTSubCatIsFirst>
+			<h1><__trans phrase="Categories"></h1>
+			<ul></MTSubCatIsFirst>
+				<MTIfNonZero tag="MTCategoryCount"><li class="<$MTCategoryBasename$>"><a href="<$MTCategoryArchiveLink$>" title="<$MTCategoryCount$>"><MTCategoryLabel></a><MTElse><li><span class="topLevel"><$MTCategoryLabel$></span></MTElse></MTIfNonZero><MTSubCatsRecurse></li><MTSubCatIsLast>
+			</ul></MTSubCatIsLast></MTTopLevelCategories>
+		</nav>
+
+		<nav class="tags">
+			<h1><__trans phrase="Tag Cloud"></h1>
+			<ul><MTTags sort_by="rank">
+				<li class="level<$MTTagRank$>"><a href="<$MTTagSearchLink$>" title="<$MTTagCount$>"><$MTTagName$></a></li></MTTags>
+			</ul>
+		</nav>
+
+		<p class="detailsSelect" id="mainDetailsSelect"><a href="#mainDetailsSelect">記事の詳細 表示・非表示</a></p>
+<MTEntries lastn="6">
+		<article class="user<$MTEntryAuthorID$> <MTEntryCategories glue=" "><$MTCategoryBasename$></MTEntryCategories>" id="entry<$MTEntryID$>">
+			<header>
+				<h1><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></h1>
+				<$MTInclude module="<__trans phrase="Entry Metadata">"$>
+			</header>
+
+			<div class="content">
+<MTIfNonEmpty tag="EntryBody"><$MTEntryBody hn_level="+1"$></MTIfNonEmpty><MTIfNonEmpty tag="EntryMore" convert_breaks="0">
+				<p class="more"><a href="<$MTEntryPermalink$>#more" title="<$MTEntryTitle$>"><__trans phrase="Continue reading"></a></p></MTIfNonEmpty>
+			</div>
+
+			<footer>
+				<ul class="reaction"><MTIfCommentsActive>
+					<li class="comment"><a href="<$MTEntryPermalink$>#comments" title="<__trans phrase="Comments on <$MTEntryTitle encode_html="1"$>">"><__trans phrase="Comments"> : <span class="count count<$MTEntryCommentCount$>"><$MTEntryCommentCount$></span></a></li></MTIfCommentsActive><MTIfPingsActive>
+					<li class="trackback"><a href="<$MTEntryPermalink$>#trackbacks" title="<__trans phrase="Trackbacks to <$MTEntryTitle encode_html="1"$>">"><__trans phrase="TrackBacks"> : <span class="count count<$MTEntryTrackbackCount$>"><$MTEntryTrackbackCount$></span></a></li></MTIfPingsActive>
+				</ul>
+			</footer>
+		</article>
+</MTEntries><MTElse>
+		<nav class="categories"><MTTopLevelCategories><MTSubCatIsFirst>
+			<h1><__trans phrase="Categories"></h1>
+			<ul></MTSubCatIsFirst>
+				<MTIfNonZero tag="MTCategoryCount"><li class="<$MTCategoryBasename$>"><a href="<$MTCategoryArchiveLink$>" title="<$MTCategoryCount$>"><MTCategoryLabel></a><MTElse><li><span class="topLevel"><$MTCategoryLabel$></span></MTElse></MTIfNonZero><MTSubCatsRecurse></li><MTSubCatIsLast>
+			</ul></MTSubCatIsLast></MTTopLevelCategories>
+		</nav>
+
+		<p class="detailsSelect" id="mainDetailsSelect"><a href="#mainDetailsSelect">記事の詳細 表示・非表示</a></p>
+<MTEntries>
+		<article class="user<$MTEntryAuthorID$> <MTEntryCategories glue=" "><$MTCategoryBasename$></MTEntryCategories>" id="entry<$MTEntryID$>">
+			<header>
+				<h1><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></h1>
+				<$MTInclude module="<__trans phrase="Entry Metadata">"$>
+			</header>
+
+			<div class="content">
+<MTIfNonEmpty tag="EntryBody"><$MTEntryBody hn_level="+1"$></MTIfNonEmpty><MTIfNonEmpty tag="EntryMore" convert_breaks="0">
+				<p class="more"><a href="<$MTEntryPermalink$>#more" title="<$MTEntryTitle$>"><__trans phrase="Continue reading"></a></p></MTIfNonEmpty>
+			</div>
+
+			<footer>
+				<ul class="reaction"><MTIfCommentsActive>
+					<li class="comment"><a href="<$MTEntryPermalink$>#comments" title="<__trans phrase="Comments on <$MTEntryTitle encode_html="1"$>">"><__trans phrase="Comments"> : <span class="count count<$MTEntryCommentCount$>"><$MTEntryCommentCount$></span></a></li></MTIfCommentsActive><MTIfPingsActive>
+					<li class="trackback"><a href="<$MTEntryPermalink$>#trackbacks" title="<__trans phrase="Trackbacks to <$MTEntryTitle encode_html="1"$>">"><__trans phrase="TrackBacks"> : <span class="count count<$MTEntryTrackbackCount$>"><$MTEntryTrackbackCount$></span></a></li></MTIfPingsActive>
+				</ul>
+			</footer>
+		</article>
+</MTEntries></MTIf>	</article><MTIf name="sidebar">
+
+	<$MTInclude module="<__trans phrase="Sidebar">"$></MTIf>

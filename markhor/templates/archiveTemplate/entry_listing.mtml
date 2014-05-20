@@ -1,0 +1,25 @@
+<MTSetVar name="archive" value="1">
+<MTSetVar name="sidebar" value="0">
+<MTIfArchiveType archive_type="Category">
+<MTSetVar name="pageID" value="category">
+<MTSetVar name="sidebar_categories" value="1">
+<MTSetVar name="category" value="1"></MTIfArchiveType>
+<MTIfArchiveType archive_type="Monthly">
+<MTSetVar name="pageID" value="archive">
+<MTSetVar name="sidebar_calendar" value="1">
+<MTSetVar name="monthly" value="1">
+<MTSetVar name="sidebar_archives" value="1"></MTIfArchiveType>
+<MTIfArchiveType archive_type="Daily">
+<MTSetVar name="pageID" value="daily">
+<MTSetVar name="daily" value="1">
+<MTSetVar name="sidebar_calendar" value="1">
+<MTSetVar name="sidebar_archives" value="1">
+</MTIfArchiveType>
+<MTSetVar name="sidebar_entries" value="1">
+<MTSetVar name="sidebar_search" value="1">
+<MTSetVarBlock name="page_title"><$MTArchiveTitle$></MTSetVarBlock>
+<$MTInclude module="<__trans phrase="Header">"$>
+
+<$MTInclude module="<__trans phrase="Entry Summary">"$>
+
+	<$MTInclude module="<__trans phrase="Footer">"$>

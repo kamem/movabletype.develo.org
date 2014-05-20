@@ -1,0 +1,74 @@
+#Main
+Archive Index: アーカイブ(エントリー一覧)
+Main Index: インデックス
+Google Sitemaps: グーグルマップ用サイトマップ
+Calendar: カレンダー
+#Archive
+Page: ウェブページ
+Entry: ブログ記事(個別エントリー)
+Entry Listing: ブログ記事リスト
+#Template Label
+Header: ヘッダー
+Footer: フッター
+Page Detail: ウェブページ詳細
+Entry Metadata: エントリーメタデータ
+Entry Detail: エントリー詳細
+Entry Summary: エントリー概要
+Topic Path: パンくずリスト
+Comments: コメント
+Comments Form: コメントフォーム
+TrackBacks: トラックバック
+#Text
+Recent Entries: 最近のエントリー
+Categories: カテゴリー
+Category: カテゴリー
+Archives: 月別
+Recent Comments: 最近のコメント
+Comment: コメント
+Comment Preview: コメント プレビュー
+TrackBack: トラックバック
+All Entries: エントリー一覧
+Tag Cloud: タグ
+Tag: タグ
+Feed: フィード
+Search: 検索
+Search Form: 検索フォーム
+Home: ホーム
+Continue reading: 続きを読む
+Comments on <$MTEntryTitle encode_html="1"$>: <$MTEntryTitle encode_html="1"$> コメント
+Trackbacks to <$MTEntryTitle encode_html="1"$>: <$MTEntryTitle encode_html="1"$> トラックバック
+Preview: 確認
+Post: 送信
+cancel: キャンセル
+Return to page top: このページの先頭へ戻る
+Anonymous: 匿名
+Name: 名前
+Mail Address: メールアドレス
+Remember personal info?: 情報を保存しますか？
+You can use some <abbr title="Hyper Text Markup Language">HTML</abbr> tags for decorating.: スタイル指定用の一部の <abbr title="Hyper Text Markup Language">HTML</abbr>タグが使用できます。
+You cannot use <abbr title="Hyper Text Markup Language">HTML</abbr> tags.: <abbr title="Hyper Text Markup Language">HTML</abbr>タグは使用できません。
+#Calendar
+Calendar: カレンダー
+S: 日
+M: 月
+T: 火
+W: 水
+T</th>: 木</th>
+F: 金
+S</th>: 土</th>
+#Search
+retrieval result: による検索結果
+You did not enter anything to search for. Please try again: 検索キーワードが入力されていません。
+Your search - <em><$MTSearchString$></em> -- did not match any documents.: <em><$MTSearchString$></em> というキーワードを含む記事は見つかりませんでした。
+Suggestions:: 次項のヒントを参考にして、検索キーワードを変えてもう一度検索してみてください。
+Make sure all words are spelled correctly.: キーワードに誤字や脱字がありませんか ?
+Try different keywords.: キーワードの意味はそのままで、表現や言い回しを変えてみてください。
+Try more general keywords.: 専門的なキーワードだったり、長い文字列のキーワードだったりした場合は、より一般的で短いキーワードにしてください。
+Try decreasing the number of keywords.: キーワードを複数指定している場合は、キーワードの数を減らしてみてください。
+Character Case: 大文字・小文字を区別する
+Regex Search: 正規表現を使用する
+Body text: 本文内検索
+Comments: コメント
+Both: 両方
+Variouslylist: 色々一覧
+EntryList: エントリー

@@ -1,0 +1,28 @@
+<MTSetVar name="pageID" value="calendar">
+<MTSetVarBlock name="page_title"><__trans phrase="Calendar"></MTSetVarBlock>
+<$MTInclude module="<__trans phrase="Header">"$>
+
+<div id="content">
+	<div id="info">
+		<h1><__trans phrase="Calendar"></h1>
+
+		<div class="textBody"><MTArchiveList archive_type="Monthly">
+			<table class="calendar <$MTArchiveDate format="%B" language="en"$>" id="date-<$MTArchiveDate format="%Y-%m"$>" cellpadding="0" cellspacing="0" summary="Calendar">
+				<caption><a href="<$MTArchiveLink archive_type="Monthly"$>" title="<$MTArchiveDate format="%B %Y"$>"><$MTArchiveDate format="%B %Y"$></a></caption>
+				<tr>
+					<th class="sunday" title=<__trans phrase="Sunday">"><__trans phrase="S"></th>
+					<th title="<__trans phrase="Monday">"><__trans phrase="M"></th>
+					<th title="<__trans phrase="Tuesday">"><__trans phrase="T"></th>
+					<th title="<__trans phrase="Wednesday">"><__trans phrase="W"></th>
+					<th title="<__trans phrase="Thursday">"><__trans phrase="T</th>">
+					<th title="<__trans phrase="Friday">"><__trans phrase="F"></th>
+					<th class="saturday" title="<__trans phrase="Saturday">"><__trans phrase="S</th>">
+				</tr><MTCalendar month="this"><MTCalendarWeekHeader>
+				<tr></MTCalendarWeekHeader>
+					<td<MTCalendarIfToday> class="today"</MTCalendarIfToday>><MTCalendarIfEntries><MTEntries lastn="1"><a href="<$MTEntryLink archive_type="Daily"$>"><$MTCalendarDay$></a></MTEntries></MTCalendarIfEntries><MTCalendarIfNoEntries><$MTCalendarDay$></MTCalendarIfNoEntries><MTCalendarIfBlank>&nbsp;</MTCalendarIfBlank></td><MTCalendarWeekFooter>
+				</tr></MTCalendarWeekFooter></MTCalendar>
+			</table></MTArchiveList>
+		</div>
+	</div>
+
+	<$MTInclude module="<__trans phrase="Footer">"$>

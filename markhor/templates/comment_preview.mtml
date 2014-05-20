@@ -1,0 +1,21 @@
+<MTSetVar name="comment" value="1">
+<MTSetVar name="pageID" value="comment_preview">
+<MTSetVarBlock name="page_title"><__trans phrase="Comment Preview"></MTSetVarBlock>
+<$MTInclude module="<__trans phrase="Header">"$>
+
+<main>
+	<article>
+		<h1><__trans phrase="Comment Preview"></h1>
+
+		<section id="comments">
+			<dl class="log">
+				<dt id="comment<$MTCommentID$>"><$MTCommentAuthorLink default_name="<__trans phrase="Anonymous">" spam_protect="1"$> : <span class="date"><$MTCommentDate format="%Y&#24180;%m&#26376;%d&#26085; (%a) %H:%M"$></span></dt>
+				<dd>
+				<$MTCommentBody$>
+				</dd>
+			</dl>
+			<$MTInclude module="<__trans phrase="Comments Form">"$>
+		</section>
+	</article>
+
+	<$MTInclude module="<__trans phrase="Footer">"$>

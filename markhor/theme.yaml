@@ -1,0 +1,164 @@
+label: Markhor
+id: markhor
+author_name: kame
+author_link: http://develo.org/
+plugin_link: http://develo.org/
+name: Markhor Template Set
+class: blog
+description: Markhor Template
+l10n_lexicon:
+  ja: l10n_ja.yaml
+version: 'β'
+thumbnail_file: thumb.png
+elements:
+    template_set:
+        component: core
+        importer: template_set
+        name: template set
+        data:
+            label: Markhor
+            base_path: templates
+            require: 1
+            templates:
+                # index templates
+                #
+                # template_file_name (hide extension):
+                #   label: template display name
+                #   outfile: template_publish_file_name (with extension)
+                #   rebuild_me: 1 or 0 (1 => on, 0 => off)
+                #
+                index:
+                    archive_index:
+                        label: Archive Index
+                        outfile: archives.html
+                        rebuild_me: 1
+                    atom:
+                        label: Atom
+                        outfile: atom.xml
+                        rebuild_me: 1
+                    javascript:
+                        label: JavaScript
+                        outfile: js/mt.js
+                        rebuild_me: 1
+                    main_index:
+                        label: Main Index
+                        outfile: index.html
+                        rebuild_me: 1
+                    rsd:
+                        label: RSD
+                        outfile: rsd.xml
+                        rebuild_me: 1
+                    rss:
+                        label: RSS
+                        outfile: rss.xml
+                        rebuild_me: 1
+                    google_sitemaps:
+                        label: Google Sitemaps
+                        outfile: sitemaps.xml
+                        rebuild_me: 1
+                    calendar:
+                        label: Calendar
+                        outfile: calendar.html
+                        rebuild_me: 1
+
+                # archive templates
+                # 
+                # template_category:
+                #   template_file_name (hide extension):
+                #     label: template display name
+                #     mappings:
+                #       mapping_name:
+                #         archive_type: archive type
+                #         file_template: path (http://movabletype.jp/documentation/appendices/archive-file-path-specifiers.html)
+                #
+                individual:
+                    archiveTemplate/entry:
+                        label: Entry
+                        mappings:
+                          entry_archive:
+                                archive_type: Individual
+                                file_template: %y/%m/%d/%h%n%x 
+                archive:
+                    archiveTemplate/entry_listing:
+                        label: Entry Listing
+                        mappings:
+                            category:
+                                archive_type: Category
+                                file_template: %-c/%i
+                            monthly:
+                                archive_type: Monthly
+                                file_template: %y/%m/%i
+                            daily:
+                                archive_type: Daily
+                                file_template: %y/%m/%d/%i
+                page:
+                    archiveTemplate/page:
+                        label: Page
+                        mappings:
+                            page_archive:
+                                archive_type: Page
+                                file_template: %-c/%-f
+
+                # template modules
+                #
+                # template_file_name (hide extension):
+                #   label: template display name
+                #
+                module:
+                    templateModule/header:
+                        label: Header
+                    templateModule/footer:
+                        label: Footer
+                    templateModule/sidebar:
+                        label: Sidebar
+                    templateModule/topic_path:
+                        label: Topic Path
+                    templateModule/entry_detail:
+                        label: Entry Detail
+                    templateModule/entry_summary:
+                        label: Entry Summary
+                    templateModule/entry_metadata:
+                        label: Entry Metadata
+                    templateModule/page_detail:
+                        label: Page Detail
+                    templateModule/comments:
+                        label: Comments
+                    templateModule/comments_form:
+                        label: Comments Form
+                    templateModule/trackbacks:
+                        label: TrackBacks
+                    google_analytics:
+                        label: Google Analytics
+                    templateModule/dopvstar:
+                        label: dopvSTAR
+
+                # system templates
+                #
+                # template_file_name (hide extension):
+                #   label: template display name
+                # 
+                system:
+                    comment_preview:
+                        label: Comment Preview
+                    comment_response:
+                        label: Comment Response
+                    dynamic_error:
+                        label: Dynamic Error
+                    popup_image:
+                        label: Popup Image
+                    search_results:
+                        label: Search Results
+    custom_fields: 
+        component: commercial
+        importer: custom_fields
+        data:
+            markhor_sidebar:
+                default: ''
+                description: ''
+                name: サイドバー
+                obj_type: page
+                options: ~
+                required: 0
+                tag: sidebar
+                type: textarea
+

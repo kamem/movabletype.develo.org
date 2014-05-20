@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=<$MTPublishCharset$>" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" /><MTIf name="entry"><MTIfNonEmpty tag="MTEntryExcerpt">
+	<meta name="description" content="<$MTEntryExcerpt encode_html="1"$>" /></MTIfNonEmpty><MTIfNonEmpty tag="MTEntryKeywords">
+	<meta name="keywords" content="<$MTEntryKeywords encode_html="1"$>" /></MTIfNonEmpty>
+	<meta property="og:title" content="<MTIf name="index"><$MTBlogName encode_html="1"$><MTElse><$MTGetVar name="page_title"$><MTIfTagSearch> <__trans phrase="Tag"></MTIfTagSearch> - <$MTBlogName encode_html="1"$></MTIf>" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="<$MTEntryPermalink$>" />
+	<meta property="og:image" content="<$MTBlogURL$>img/og.gif" />
+	<meta property="og:description" content="<$MTEntryExcerpt encode_html="1"$>">
+	<meta property="og:site_name" content="<$MTBlogName$>" /><MTElse><MTIf name="webpage"><MTIfNonEmpty tag="MTPageExcerpt">
+	<meta name="description" content="<$MTPageExcerpt encode_html="1"$>" /></MTIfNonEmpty><MTIfNonEmpty tag="MTPageKeywords">
+	<meta name="keywords" content="<$MTPageKeywords encode_html="1"$>" /></MTIfNonEmpty>
+	<meta property="og:title" content="<MTIf name="index"><$MTBlogName encode_html="1"$><MTElse><$MTGetVar name="page_title"$><MTIfTagSearch> <__trans phrase="Tag"></MTIfTagSearch> - <$MTBlogName encode_html="1"$></MTIf>" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="<$MTPagePermalink$>" />
+	<meta property="og:image" content="<$MTBlogURL$>img/og.gif" />
+	<meta property="og:description" content="<$MTPageExcerpt encode_html="1"$>">
+	<meta property="og:site_name" content="<$MTBlogName$>" /><MTElse><MTIf name="category"><MTIfNonEmpty tag="MTCategoryDescription">
+	<meta name="description" content="<$MTCategoryDescription$>" /></MTIfNonEmpty>
+	<meta name="keywords" content="XHTML,HTML,デザイン" />
+	<meta property="og:title" content="<MTIf name="index"><$MTBlogName encode_html="1"$><MTElse><$MTGetVar name="page_title"$><MTIfTagSearch> <__trans phrase="Tag"></MTIfTagSearch> - <$MTBlogName encode_html="1"$></MTIf>" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="<$MTCategoryArchiveLink$>" />
+	<meta property="og:image" content="<$MTBlogURL$>og.gif" />
+	<meta property="og:description" content="<$MTCategoryDescription$>">
+	<meta property="og:site_name" content="<$MTBlogName$>" /><MTElse><MTIfNonEmpty tag="MTBlogDescription">
+	<meta name="description" content="<$MTBlogDescription remove_html="1"$>" /></MTIfNonEmpty>
+	<meta name="keywords" content="XHTML,HTML,デザイン" />
+	<meta property="og:title" content="<MTIf name="index"><$MTBlogName encode_html="1"$><MTElse><$MTGetVar name="page_title"$><MTIfTagSearch> <__trans phrase="Tag"></MTIfTagSearch> - <$MTBlogName encode_html="1"$></MTIf>" />
+	<meta property="og:type" content="blog" />
+	<meta property="og:url" content="<$MTBlogURL$>" />
+	<meta property="og:image" content="<$MTBlogURL$>img/og.gif" />
+	<meta property="og:description" content="<$MTBlogDescription remove_html="1"$>">
+	<meta property="og:site_name" content="<$MTBlogName$>" /></MTIf></MTIf></MTIf>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,target-densitydpi=device-dpi">
+	<link rel="stylesheet" href="<$MTBlogURL$>css/import.css" type="text/css" />
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://develo.org/feed" />
+	<link rel="start" href="<$MTBlogURL$>" title="Home" /><MTIf name="archive"><MTArchivePrevious>
+	<link rel="prev" href="<$MTArchiveLink$>" title="<$MTArchiveTitle encode_html="1"$>" /></MTArchivePrevious><MTArchiveNext>
+	<link rel="next" href="<$MTArchiveLink$>" title="<$MTArchiveTitle encode_html="1"$>" /></MTArchiveNext></MTIf><MTIf name="entry"><MTEntryPrevious>
+	<link rel="prev" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>" /></MTEntryPrevious><MTEntryNext>
+	<link rel="next" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>" /></MTEntryNext></MTIf>
+	<script src="<$MTBlogURL$>js/import.js"></script><MTIf name="entry">
+	<script type="text/javascript" src="<$MTLink template="javascript"$>"></script>
+ 
+<$MTEntryTrackbackData$><$MTCCLicenseRDF$></MTIf>
+	<title><MTIf name="index"><$MTBlogName encode_html="1"$><MTElse><$MTGetVar name="page_title"$><MTIfTagSearch> <__trans phrase="Tag"></MTIfTagSearch> - <$MTBlogName encode_html="1"$></MTIf></title>
+</head>
+<body<MTIf name="entry"><MTIf name="pageID"> class="<$MTGetVar name="pageID"$> user<$MTEntryAuthorID$> <MTEntryCategories glue=" "><$MTCategoryBasename$></MTEntryCategories>" id="entry<$MTEntryID$>"</MTIf><MTElse><MTIf name="archive"> <MTIfArchiveType archive_type="Category">class="<$MTGetVar name="pageID"$><MTHasParentCategory><MTParentCategories exclude_current="1"> <$MTCategoryBasename$></MTParentCategories></MTHasParentCategory><MTIf name="sidebar"> double</MTIf>" id="<$MTCategoryBasename$>"</MTIfArchiveType><MTIfArchiveType archive_type="Monthly">class="<$MTGetVar name="pageID"$> <$MTArchiveDate format="%B" language="en"$><MTIf name="sidebar"> double</MTIf>" id="date-<$MTArchiveDate format="%Y-%m"$>"</MTIfArchiveType><MTIfArchiveType archive_type="Daily">class="<$MTGetVar name="pageID"$> <$MTArchiveDate format="%B" language="en"$><MTIf name="sidebar"> double</MTIf>" id="date-<$MTArchiveDate format="%Y-%m-%d"$>"</MTIfArchiveType><MTElse><MTIf name="search"> class="search" id="<$MTGetVar name="search_type"$>"<MTElse><MTIf name="index"><MTIf name="sidebar"> class="double"</MTIF> id="<$MTGetVar name="pageID"$>"<MTElse><MTIf name="webpage"> class="page<MTIf name="sidebar"> double</MTIf>"</MTIf> id="<$MTGetVar name="pageID"$>"</MTIf></MTIf></MTIf></MTIF>>
+<header id="header">
+	<h1><a href="<$MTBlogURL$>"><$MTBlogName encode_html="1"$></a></h1><MTIfNonEmpty tag="MTBlogDescription">
+	<p class="description"><$MTBlogDescription$></p></MTIfNonEmpty>
+	<nav>
+		<$MTInclude module="<__trans phrase="Topic Path">"$><MTIf name="entry">
+		<ul class="flip"><MTEntryNext>
+			<li class="newer"><a href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>" rel="nofollow">次の記事へ</a></li></MTEntryNext><MTEntryPrevious>
+			<li class="older"><a href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>" rel="nofollow">前の記事へ</a></li></MTEntryPrevious>
+		</ul></MTIf>
+		<ul class="guide">
+			<li class="list<MTIf name="page_title" eq="色々一覧"> on</MTIf>"><a href="<$MTBlogURL$>archives.html">色々一覧</a></li>
+			<li class="about"><a href="<$MTBlogURL$>about.html">サイトについて</a></li>
+			<li class="profiles"><a href="<$MTBlogURL$>profiles.html">プロフィール</a></li>
+			<li class="rss"><a href="http://develo.org/feed">RSS</a></li>
+			<li class="search"><a href="#search">検索</a></li>
+		</ul>
+		<form method="get" action="<$MTCGIPath$><$MTSearchScript$>" id="searchBox">
+			<fieldset>
+			<legend><label for="search"><$MTBlogName encode_html="1"$>内の検索</label></legend>
+			<input type="hidden" name="IncludeBlogs" value="<$MTBlogID$>" />
+			<input id="search-text" name="search" size="16" value="<$MTSearchString encode_html="1"$>" />
+			<input type="submit" class="button search" value="<__trans phrase="Search">" />
+			</fieldset>
+		</form>
+	</nav>
+</header>

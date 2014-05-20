@@ -1,0 +1,15 @@
+<MTSetVar name="webpage" value="1">
+<MTSetVarBlock name="pageID"><MTParentFolders><$MTFolderLabel$></MTParentFolders><$MTPageBasename$></MTSetVarBlock>
+<MTSetVarBlock name="page_title"><$MTPageTitle$></MTSetVarBlock>
+<$MTInclude module="<__trans phrase="Header">"$>
+
+<$MTInclude module="<__trans phrase="Page Detail">"$><MTIfCommentsActive>
+
+		<$MTInclude module="<__trans phrase="Comments">"$></MTIfCommentsActive><MTIfPingsActive>
+
+		<$MTInclude module="<__trans phrase="Trackbacks">"$></MTIfPingsActive>
+	</article><MTIfNonEmpty tag="sidebar">
+
+<MTsidebar></MTIfNonEmpty>
+
+	<$MTInclude module="<__trans phrase="Footer">"$>

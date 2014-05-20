@@ -1,0 +1,39 @@
+<MTSetVar name="search" value="1">
+<MTSetVar name="pageID" value="search">
+<MTSetVarBlock name="page_title"><$MTSearchString$></MTSetVarBlock><MTIfStraightSearch>
+<MTSetVar name="search_type" value="search"><MTElse><MTSetVar name="search_type" value="tag"></MTIfStraightSearch>
+<$MTInclude module="<__trans phrase="Header">"$>
+
+<main role="main">
+	<article>
+		<h1><MTIfStraightSearch><$MTSearchString$> <__trans phrase="retrieval result"> : <$MTSearchResultCount$></MTIfStraightSearch><MTIfTagSearch><$MTSearchString$> <__trans phrase="Tag"> : <$MTSearchResultCount$></MTIfTagSearch></h1>
+
+		<p class="detailsSelect" id="mainDetailsSelect"><a href="#mainDetailsSelect">記事の詳細 表示・非表示</a></p><MTSearchResults>
+
+		<article class="user<$MTEntryAuthorID$> <MTEntryCategories glue=" "><$MTCategoryBasename$></MTEntryCategories>" id="entry<$MTEntryID$>">
+			<header>
+				<h1><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></h1>
+				<$MTInclude module="<__trans phrase="Entry Metadata">"$>
+			</header>
+
+			<div class="content">
+				<p><$MTEntryExcerpt encode_html="1"$></p>
+			</div>
+
+			<footer>
+				<ul class="reaction"><MTIfCommentsActive>
+					<li class="comment"><a href="<$MTEntryPermalink$>#comments" title="<__trans phrase="Comments on <$MTEntryTitle encode_html="1"$>">"><__trans phrase="Comments"> : <span class="count count<$MTEntryCommentCount$>"><$MTEntryCommentCount$></span></a></li></MTIfCommentsActive><MTIfPingsActive>
+					<li class="trackback"><a href="<$MTEntryPermalink$>#trackbacks" title="<__trans phrase="Trackbacks to <$MTEntryTitle encode_html="1"$>">"><__trans phrase="TrackBacks"> : <span class="count count<$MTEntryTrackbackCount$>"><$MTEntryTrackbackCount$></span></a></li></MTIfPingsActive>
+				</ul>
+			</footer>
+		</article></MTSearchResults><MTNoSearchResults>
+
+		<div class="content">
+			<p><__trans phrase="Your search - <em><$MTSearchString$></em> -- did not match any documents."></p>
+		</div></MTNoSearchResults><MTNoSearch>
+		<div class="content">
+			<p><__trans phrase="You did not enter anything to search for. Please try again"></p>
+		</div></MTNoSearch>
+	</article>
+
+	<$MTInclude module="<__trans phrase="Footer">"$>

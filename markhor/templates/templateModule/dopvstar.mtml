@@ -1,0 +1,11 @@
+<script type="text/javascript" language="JavaScript">
+var pa = "<$MTBlogURL$>ds/dsw.cgi";
+var pg = "<MTIf name="entry">entry<$MTEntryID$><MTElse><MTIf name="category"><$MTCategoryBasename$><MTElse><$MTGetVar name="pageID"$></MTIf></MTIf>";
+var p = "n";
+var cnt = "no";
+var a="&&"; var pf=navigator.platform; var lng=navigator.language;
+var swh=screen.width+"x"+screen.height;
+var cd=screen.colorDepth; var pd=screen.pixelDepth; var rf=document.referrer;
+document.write("<img src='"+pa+"?xx=",new Date().getSeconds(),a+"pg="+pg+a+"p="+p+a+"md=j"+a+"cnt="+cnt+a+"pf="+pf+a+ "lng="+lng+a+"swh="+swh+a+"cd="+cd+a+"pd="+pd+a+"rf="+rf+"' alt='' />");
+</script>
+<noscript><img src="<$MTBlogURL$>ds/dsw.cgi?pg=index&&p=n&&md=nj" alt="" /></noscript>
